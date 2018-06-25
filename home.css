@@ -1,12 +1,11 @@
-@import url('https://fonts.googleapis.com/css?family=Dancing+Script|Lato');
+@font-face {
+	font-family: 'ProximaNovaRegular';
+	src: url('./ProximaNovaRegular.eot');
+	src: local('ProximaNovaRegular'), url('./ProximaNovaRegular.woff') format('woff'), url('./ProximaNovaRegular.ttf') format('truetype');
+}
 /***************************************************************************/
 :root{
-    --primaryred:#ff424f;
-    --secondaryred:#f84735;
-    --lightblack:#222b31;
-    --darkblack:#191c1f;
-    --mainfont:'Dancing Script', cursive;
-    --secondfont: 'Lato', sans-serif;
+    --headingfont:'ProximaNovaRegular';
 }
 /***************************** DEFAULTS ***************************************/
 body{
@@ -14,7 +13,7 @@ body{
 	padding: 0;
 	font-size: 16px;
 	line-height: 1.5;
-	font-family:var(--secondfont);
+	font-family:var(--headingfont);
 }
 *,*:before,*:after{
 	box-sizing: border-box;
@@ -23,78 +22,44 @@ img{
 	max-width: 100%;
 	height: auto;
 }
-.fullcontent{
+.homepage{
     width:100%;
-    min-height: 100vh;
-    height: auto;
-    padding:6% 10% 5% 10%;
-    background-image: url(img/b.jpg);
-    background:linear-gradient(rgba(0, 0, 0, 0.70), rgba(0, 0, 0, 0.70)),url(img/b.jpg);
+    height:100vh;
+    display: grid;
+    grid-template-columns: 2fr 2fr 1fr 1fr 1fr 1fr;
+    grid-template-rows:7fr 1fr 8fr;
+    grid-template-areas: 
+    "homeheading homeheading homeheading homeimg homeimg homeimg"
+    ". homelogin homelogin homelogin homelogin homelogin"
+    "homecontinue homelogin homelogin homelogin homelogin homelogin";
+}
+.homeheading *{
+    margin: 0;
+}
+.homeheading{
+    grid-area: homeheading;
+    margin: 10% 0 0 15%;
+}
+.homeheading h1{
+    font-size: 3rem;
+    letter-spacing: 0.3px;
+    color: #29193B;
+}
+.homeheading p{
+    font-size: 1.25rem;
+    color: #959299;
+}
+.homeimg{
+    grid-area: homeimg;
+    background-image: url(img/book1.jpg);
     background-size: cover;
     background-position: 50% 50%;
-    display: flex;
-    flex-direction: row;
 }
-.headings{
-     /* background:red;  */
-    flex-basis: 65%;
-    margin-right: 5%;
+.homecontinue{
+    grid-area: homecontinue;
 }
-.headings h1{
-    font-size: 5rem;
-    font-family:var(--mainfont);
-    color:white;
-    margin:3% 0% 3% 0%;
+.homelogin{
+    grid-area: homelogin;
+    background:#00DF80;
 }
-.headings h2{
-    font-weight: 300;
-    color: rgba(255, 255, 255, 0.5);
-}
-.formbox{
-    background:rgb(34,43,49,0.7);
-    color:white;
-    flex-basis: 35%;
-    border-top: 10px solid var(--secondaryred);
-    padding:2% 3%;
-}
-.formbox *{
-    margin: 0;
-}
-.formbox h3{
-    font-family: var(--mainfont);
-    font-size: 2rem;
-    margin-bottom: 1rem;
-}
-.formbox form label{
-    color: rgba(255, 255, 255, 0.8);
-    display: inline-block;
-    max-width: 100%;
-    margin-bottom: 0.3rem;
-}
-.formbox form .asd{
-    border: 2px solid rgba(255, 255, 255, 0.2);
-    box-shadow: none;
-    background: transparent;
-    height: 2.8rem;
-    display: block;
-    width: 100%;
-    border-radius: 4px;
-    margin-bottom: 1rem;
-}
-form .mainbox{
-    color: white;
-    box-shadow: none;
-    background: var(--secondaryred);
-    height: 2.8rem;
-    display: block;
-    width: 100%;
-    border-radius: 4px;
-    margin-bottom: 10px;
-    text-align: center;
-    text-decoration: none;
-    border: none;
-}
-a .mainbox{
-    margin: 0;
-    padding: 2%;
-}
+
