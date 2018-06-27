@@ -139,3 +139,72 @@ h1,h2{
 .book{
     box-shadow: 0px 3px 15px rgba(0,0,0,0.2);
 }
+/* controls */
+.bookinfo{
+    position: relative;
+}
+ul.controls{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: flex;
+    width: 100%;
+    overflow: hidden;
+}
+ul.controls li{
+    color:red;
+    text-decoration: none;
+    cursor: pointer;
+    list-style: none;
+    flex-basis: 33%;
+    flex-grow: 1;
+    display: flex;
+}
+.controls a{
+    display: block;
+    position: relative;
+    text-decoration: none;
+    margin: auto;
+    padding: 1rem 1rem;
+}
+.controls a::after{
+    content: '';
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, .3);
+    transition: opacity 0.3s;    
+}
+.controls a:hover::after{
+    opacity: 1;
+}
+
+/* svg */
+svg{
+    max-width: 100%;
+}
+.icon--2x {
+    font-size: 2rem;
+}
+svg.icon{
+    display: inline-block;
+    font-size: 1rem;
+    height: 1em;
+    vertical-align: middle;
+    width: 1em;
+    fill: #24b15e;
+    font-size: 1.4rem;
+}
+.invisible {
+    left: -999px;
+    overflow: hidden;
+    position: absolute;
+    top: -999px;
+}
+
