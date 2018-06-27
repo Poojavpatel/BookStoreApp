@@ -179,13 +179,16 @@ ul.controls li{
     left: 0;
     opacity: 0;
     box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, .3);
-    transition: opacity 0.3s;    
+    transition: opacity 0.3s ease;    
 }
 .controls a:hover::after{
     opacity: 1;
 }
 
 /* svg */
+/* icon paths from https://icomoon.io/app/#/select use their viewbox and path */
+/* icon pack feather icons */
+
 svg{
     max-width: 100%;
 }
@@ -200,6 +203,14 @@ svg.icon{
     width: 1em;
     fill: #24b15e;
     font-size: 1.4rem;
+    opacity: 0.9;
+    transition:opacity 0.3s ease;
+}
+.controls a:hover svg.icon {
+    opacity: 1;
+}
+svg.deletesvg{
+    fill: #e34a4a;
 }
 .invisible {
     left: -999px;
