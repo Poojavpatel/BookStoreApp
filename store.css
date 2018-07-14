@@ -218,4 +218,20 @@ svg.deletesvg{
     position: absolute;
     top: -999px;
 }
-
+.deleteme{
+    animation:deleteanimation 1.5s cubic-bezier(0.55, -0.04, 0.91, 0.94) forwards;
+    transform-origin: 100% 0%;
+}
+@keyframes deleteanimation {
+    0% {
+        opacity: 1;
+        transform: rotateZ(0);
+    }
+    100% {
+        opacity: 0;
+        transform: translateY(600px) rotateZ(-90deg);
+    }
+}
+.hideme{
+    display: none;
+}
